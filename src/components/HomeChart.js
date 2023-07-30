@@ -47,7 +47,7 @@ function HomeChart() {
     event.preventDefault();
     setData((prev) => [...prev, chartData]);
     setShowBar(true);
-    setActive((prevState) => ({ ...prevState, barA: !showBar }));
+    // setActive((prevState) => ({ ...prevState, barA: !showBar }));
   };
 
   const [showPie, setShowPie] = useState(false);
