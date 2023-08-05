@@ -8,7 +8,7 @@ import LineChart from "./LineChart";
 
 import ChartCard from "../ui/ChartCard";
 import styled from "styled-components";
-import ChartButton from "../ui/ChartButton";
+
 import ChartForm from "./ChartForm";
 
 Chart.register(CategoryScale);
