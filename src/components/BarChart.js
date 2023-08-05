@@ -1,4 +1,4 @@
-import { Bar, Scatter } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import { styled } from "styled-components";
 export const BarChart = ({ chartData }) => {
   let delayed;
