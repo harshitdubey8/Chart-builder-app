@@ -13,7 +13,7 @@ import ChartForm from "./ChartForm";
 
 import PolarAreaChart from "./PolarAreaChart";
 import RadarChart from "./RadarChart";
-import DougnutChart from "./Dougnut";
+import DougnutChart from "./DougnutChart";
 
 Chart.register(CategoryScale);
 function HomeChart() {
@@ -110,7 +110,7 @@ const ChartSection = styled.div`
 
 const ChartDisplay = styled.div`
   background-color: #ffffff;
-  /* overflow-y: scroll; */
+
   height: fit-content;
   width: 80%;
 `;

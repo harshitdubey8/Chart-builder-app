@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 
 function DougnutChart({ chartData }) {
   return (
-    <StackedChartWrapper className="chart-container">
+    <DougnutChartWrapper className="chart-container">
       <h2 style={{ textAlign: "center" }}>Doughnut Chart</h2>
       <Doughnut
         data={chartData}
@@ -21,11 +21,11 @@ function DougnutChart({ chartData }) {
           },
         }}
       />
-    </StackedChartWrapper>
+    </DougnutChartWrapper>
   );
 }
 
-const StackedChartWrapper = styled.div`
+const DougnutChartWrapper = styled.div`
   padding: 30px;
   transition: transform 0.2s;
 

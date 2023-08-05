@@ -7,7 +7,6 @@ const ChartCard = (props) => {
 
 const CardWrapper = styled.section`
   background-color: #ffffff;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 
   display: flex;
   width: 100%;

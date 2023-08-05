@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 
 function PolarAreaChart({ chartData }) {
   return (
-    <StackedChartWrapper className="chart-container">
+    <PolarChartWrapper className="chart-container">
       <h2 style={{ textAlign: "center" }}>Polar area Chart</h2>
       <PolarArea
         data={chartData}
@@ -21,11 +21,11 @@ function PolarAreaChart({ chartData }) {
           },
         }}
       />
-    </StackedChartWrapper>
+    </PolarChartWrapper>
   );
 }
 
-const StackedChartWrapper = styled.div`
+const PolarChartWrapper = styled.div`
   padding: 30px;
   transition: transform 0.2s;
 
