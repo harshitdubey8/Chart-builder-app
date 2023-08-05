@@ -110,7 +110,7 @@ const ChartSection = styled.div`
 
 const ChartDisplay = styled.div`
   background-color: #ffffff;
-  overflow-y: auto;
+  /* overflow-y: scroll; */
   height: fit-content;
   width: 80%;
 `;

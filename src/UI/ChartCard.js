@@ -11,11 +11,13 @@ const CardWrapper = styled.section`
 
   display: flex;
   width: 100%;
-  height: fit-content;
+  height: 100%;
   border-radius: 12px;
   border: 1px solid #e4e4e4;
   margin: 20px;
   padding: 30px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default ChartCard;
