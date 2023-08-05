@@ -15,11 +15,10 @@ const Button = styled.button`
   border-style: none;
   width: 200px;
   box-sizing: border-box;
-  color: #ffffff;
+
   cursor: pointer;
   display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+
   font-size: 14px;
   font-weight: 500;
   height: 40px;
@@ -44,10 +43,12 @@ const Button = styled.button`
   ${(props) =>
     props.type === "submit" &&
     `
-     width: 300px;
-     border-radius : 30px;
+     width: 200px;
+     border-radius : 10px;
+     background-color : black !important;
+     color: #ffffff !important;
+     
   `}
-  background-color: ${(props) => (props.isActive ? "#001C30  " : "#146c94")};
 `;
 
 export default ChartButton;

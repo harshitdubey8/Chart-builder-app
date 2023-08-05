@@ -6,12 +6,14 @@ const ChartCard = (props) => {
 };
 
 const CardWrapper = styled.section`
-  background-color: #e8f6ef;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #ffffff;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+
   display: flex;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
-  border-radius: 30px;
+  border-radius: 12px;
+  border: 1px solid #e4e4e4;
   margin: 20px;
   padding: 30px;
 `;

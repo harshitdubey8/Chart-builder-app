@@ -6,9 +6,9 @@ import PieChart from "./PieChart";
 import { BarChart } from "./BarChart";
 import LineChart from "./LineChart";
 
-import ChartCard from "../UI/ChartCard";
+import ChartCard from "../ui/ChartCard";
 import styled from "styled-components";
-import ChartButton from "../UI/ChartButton";
+import ChartButton from "../ui/ChartButton";
 import ChartForm from "./ChartForm";
 
 Chart.register(CategoryScale);
@@ -16,168 +16,101 @@ function HomeChart() {
   const [data, setData] = useState([]);
   const [chartData, setChartData] = useState({});
 
-  const [active, setActive] = useState({
-    pieA: false,
-    barA: false,
-    lineA: false,
-  });
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     setChartData({
       labels: data.map((bar) => bar.label),
       datasets: [
         {
-          label: " ",
+          label: "",
           data: data.map((bar) => bar.data),
           backgroundColor: [
-            "rgba(75,192,192,1)",
-
-            "#50AF95",
-            "#f3ba2f",
-            "#2a71d0",
+            "rgba(55, 25, 247, 0.5)",
+            "rgba(240, 254, 232, 5)",
+            "rgba(244, 132, 0, 0.5)",
           ],
-          borderColor: "black",
+          borderColor: [
+            "rgba(55, 25, 247, 1)",
+            "rgba(240, 254, 232, 1)",
+            "rgba(244, 132, 0, 1)",
+          ],
           borderWidth: 2,
         },
       ],
     });
+    setLoaded(true);
   }, [data]);
 
   const chartDataHandler = (event, chartData) => {
     event.preventDefault();
     setData((prev) => [...prev, chartData]);
-    setShowBar(true);
-    // setActive((prevState) => ({ ...prevState, barA: !showBar }));
-  };
-
-  const [showPie, setShowPie] = useState(false);
-  const [showBar, setShowBar] = useState(false);
-  const [showLine, setShowLine] = useState(false);
-
-  const pieHandler = (e) => {
-    e.preventDefault();
-    setShowPie((prev) => !prev);
-    setActive((prevState) => ({ ...prevState, pieA: !showPie }));
-  };
-
-  const lineHandler = (e) => {
-    e.preventDefault();
-    setShowLine((prev) => !prev);
-    setActive((prevState) => ({ ...prevState, lineA: !showLine }));
-  };
-
-  const barHandler = (e) => {
-    e.preventDefault();
-    setShowBar((prev) => !prev);
-    setActive((prevState) => ({ ...prevState, barA: !showBar }));
-  };
-
-  const allDisplayHandler = (e) => {
-    e.preventDefault();
-
-    setShowBar(true);
-    setShowLine(true);
-    setShowPie(true);
   };
 
   return (
     <HomeWrapper>
+      <FormDisplay>
+        <FormHeader>Chart Builder </FormHeader>
+        <ChartForm chartDataHandler={chartDataHandler} />
+      </FormDisplay>
       <ChartDisplay>
-        <ButtonSection>
-          <ChartButton
-            title={"Pie"}
-            onClick={pieHandler}
-            isActive={active.pieA}
-          />
-          <ChartButton
-            title={"Bar"}
-            onClick={barHandler}
-            isActive={active.barA}
-          />
-          <ChartButton
-            title={"Line"}
-            onClick={lineHandler}
-            isActive={active.lineA}
-          />
-          <ChartButton title={"Display All"} onClick={allDisplayHandler} />
-        </ButtonSection>
-
-        <ChartSection>
-          {!showPie && !showBar && !showLine && (
-            <InfoText>
-              Fill the form to see Charts or Tap on the above Buttons
-            </InfoText>
-          )}
-
-          {showPie && (
+        {loaded && (
+          <ChartSection>
             <ChartCard>
               <PieChart chartData={chartData} />
             </ChartCard>
-          )}
-          {showBar && (
+
             <ChartCard>
               <BarChart chartData={chartData} />
             </ChartCard>
-          )}
-          {showLine && (
+
             <ChartCard>
               <LineChart chartData={chartData} />
             </ChartCard>
-          )}
-        </ChartSection>
+          </ChartSection>
+        )}
       </ChartDisplay>
-      <FormDisplay>
-        <FormHeader> Chart Form </FormHeader>
-        <ChartForm chartDataHandler={chartDataHandler} />
-      </FormDisplay>
     </HomeWrapper>
   );
 }
 
 const HomeWrapper = styled.section`
   display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 `;
 const ChartSection = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-`;
-
-const ButtonSection = styled.div`
-  display: flex;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  overflow-y: scroll;
+  border-radius: 16px;
+  gap: 20px;
+  background-color: #f6f6f6;
+  height: 100vh;
+  margin-top: 25px;
 `;
 
 const ChartDisplay = styled.div`
-  background-color: #f6f4eb;
-  overflow-y: scroll;
-  height: 100%;
-  width: 50%;
+  background-color: #ffffff;
+  overflow-y: auto;
+  height: fit-content;
+  width: 80%;
 `;
 const FormDisplay = styled.div`
-  width: 50%;
-  background-color: #19a7ce;
-  overflow-y: hidden;
+  background-color: #ffffff;
+  width: 20%;
+  /* background-color: #19a7ce; */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-
   align-items: center;
 `;
 
 const FormHeader = styled.h1`
-  display: flex;
-  color: white;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: black;
 
   margin-top: 20px;
 `;
 
-const InfoText = styled.h1`
-  color: black;
-  font-size: 20px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-`;
 export default HomeChart;

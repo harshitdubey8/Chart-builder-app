@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import ChartButton from "../UI/ChartButton";
+import ChartButton from "../ui/ChartButton";
 
 const ChartForm = (props) => {
   const [formData, setFormData] = useState({
@@ -16,11 +16,17 @@ const ChartForm = (props) => {
     }));
   };
 
+  const formSubmitHandler = (event) => {
+    props.chartDataHandler(event, formData);
+    setFormData({
+      data: "",
+      label: "",
+    });
+  };
+
   return (
     <InputFormWrapper>
-      <FormContainer
-        onSubmit={(event) => props.chartDataHandler(event, formData)}
-      >
+      <FormContainer onSubmit={formSubmitHandler}>
         <LabelText>X Axis</LabelText>
         <FormInput
           type="text"
@@ -56,18 +62,19 @@ const FormContainer = styled.form`
 `;
 
 const FormInput = styled.input`
-  width: 300px;
+  width: 200px;
   padding: 10px;
   height: 40px;
   border: none;
   margin: 10px 10px 10px 10px;
   outline-width: 0;
   font-size: 20px;
-  border-radius: 30px;
+  border-radius: 3px;
+  background-color: #f6f6f6;
 `;
 
 const LabelText = styled.h2`
-  color: white;
+  color: black;
   font-size: large;
 `;
 

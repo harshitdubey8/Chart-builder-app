@@ -1,4 +1,4 @@
-import { Bar } from "react-chartjs-2";
+import { Bar, Scatter } from "react-chartjs-2";
 import { styled } from "styled-components";
 export const BarChart = ({ chartData }) => {
   return (
@@ -7,6 +7,7 @@ export const BarChart = ({ chartData }) => {
       <Bar
         data={chartData}
         options={{
+          responsive: true,
           plugins: {
             title: {
               display: true,
@@ -24,9 +25,9 @@ export const BarChart = ({ chartData }) => {
 
 const BarChartWrapper = styled.div`
   padding: 30px;
-  transition: transform 0.2s;
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.01);
   }
 `;
