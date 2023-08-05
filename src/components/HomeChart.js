@@ -6,7 +6,7 @@ import PieChart from "./PieChart";
 import { BarChart } from "./BarChart";
 import LineChart from "./LineChart";
 
-import ChartCard from "../ui/ChartCard";
+import ChartCard from "../UI/ChartCard";
 import styled from "styled-components";
 
 import ChartForm from "./ChartForm";

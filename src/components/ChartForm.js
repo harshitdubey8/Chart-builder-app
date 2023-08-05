@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import ChartButton from "../ui/ChartButton";
+import ChartButton from "../UI/ChartButton";
 
 const ChartForm = (props) => {
   const [formData, setFormData] = useState({
