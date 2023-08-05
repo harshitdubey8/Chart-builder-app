@@ -11,9 +11,9 @@ import styled from "styled-components";
 
 import ChartForm from "./ChartForm";
 
-import LineSegmentChart from "./Dougnut";
 import PolarAreaChart from "./PolarAreaChart";
 import RadarChart from "./RadarChart";
+import DougnutChart from "./Dougnut";
 
 Chart.register(CategoryScale);
 function HomeChart() {
@@ -75,7 +75,7 @@ function HomeChart() {
             </ChartCard>
 
             <ChartCard>
-              <LineSegmentChart chartData={chartData} />
+              <DougnutChart chartData={chartData} />
             </ChartCard>
             <ChartCard>
               <PolarAreaChart chartData={chartData} />
