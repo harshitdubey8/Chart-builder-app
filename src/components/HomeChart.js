@@ -14,7 +14,6 @@ import ChartForm from "./ChartForm";
 import LineSegmentChart from "./Dougnut";
 import PolarAreaChart from "./PolarAreaChart";
 import RadarChart from "./RadarChart";
-import ScatterChart from "./ScatterChart";
 
 Chart.register(CategoryScale);
 function HomeChart() {
@@ -34,13 +33,13 @@ function HomeChart() {
             "rgba(55, 25, 247, 0.5)",
             "rgba(124, 218, 148, 0.5)",
             "rgba(244, 132, 0, 0.5)",
-            "rgba(7, 124, 255, 1)",
+            "rgba(154, 208, 245, 1)",
           ],
           borderColor: [
             "rgba(55, 25, 247, 1)",
             "rgba(124, 218, 148, 1)",
             "rgba(244, 132, 0, 1)",
-            "rgba(163, 163, 163, 1)",
+            "rgba(54, 162, 235, 1)",
           ],
           borderWidth: 2,
         },
@@ -56,7 +55,7 @@ function HomeChart() {
 
   return (
     <HomeWrapper>
-      <FormDisplay>
+      <FormDisplay data-aos="fade-up-right">
         <FormHeader>Chart Builder </FormHeader>
         <ChartForm chartDataHandler={chartDataHandler} />
       </FormDisplay>
@@ -118,7 +117,7 @@ const ChartDisplay = styled.div`
 const FormDisplay = styled.div`
   background-color: #ffffff;
   width: 20%;
-  /* background-color: #19a7ce; */
+
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -127,7 +126,6 @@ const FormDisplay = styled.div`
 
 const FormHeader = styled.h1`
   color: black;
-
   margin-top: 20px;
 `;
 
