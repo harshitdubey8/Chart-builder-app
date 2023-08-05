@@ -8,6 +8,20 @@ function LineChart({ chartData }) {
       <Line
         data={chartData}
         options={{
+          animations: {
+            radius: {
+              duration: 400,
+              easing: "linear",
+              loop: (context) => context.active,
+            },
+          },
+          hoverRadius: 12,
+          hoverBackgroundColor: "yellow",
+          interaction: {
+            mode: "nearest",
+            intersect: false,
+            axis: "x",
+          },
           plugins: {
             title: {
               display: true,

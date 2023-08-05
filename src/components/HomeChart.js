@@ -11,6 +11,11 @@ import styled from "styled-components";
 
 import ChartForm from "./ChartForm";
 
+import LineSegmentChart from "./Dougnut";
+import PolarAreaChart from "./PolarAreaChart";
+import RadarChart from "./RadarChart";
+import ScatterChart from "./ScatterChart";
+
 Chart.register(CategoryScale);
 function HomeChart() {
   const [data, setData] = useState([]);
@@ -27,13 +32,15 @@ function HomeChart() {
           data: data.map((bar) => bar.data),
           backgroundColor: [
             "rgba(55, 25, 247, 0.5)",
-            "rgba(240, 254, 232, 5)",
+            "rgba(124, 218, 148, 0.5)",
             "rgba(244, 132, 0, 0.5)",
+            "rgba(7, 124, 255, 1)",
           ],
           borderColor: [
             "rgba(55, 25, 247, 1)",
-            "rgba(240, 254, 232, 1)",
+            "rgba(124, 218, 148, 1)",
             "rgba(244, 132, 0, 1)",
+            "rgba(163, 163, 163, 1)",
           ],
           borderWidth: 2,
         },
@@ -67,6 +74,16 @@ function HomeChart() {
             <ChartCard>
               <LineChart chartData={chartData} />
             </ChartCard>
+
+            <ChartCard>
+              <LineSegmentChart chartData={chartData} />
+            </ChartCard>
+            <ChartCard>
+              <PolarAreaChart chartData={chartData} />
+            </ChartCard>
+            <ChartCard>
+              <RadarChart chartData={chartData} />
+            </ChartCard>
           </ChartSection>
         )}
       </ChartDisplay>
@@ -89,6 +106,7 @@ const ChartSection = styled.div`
   background-color: #f6f6f6;
   height: 100vh;
   margin-top: 25px;
+  margin-right: 20px;
 `;
 
 const ChartDisplay = styled.div`
