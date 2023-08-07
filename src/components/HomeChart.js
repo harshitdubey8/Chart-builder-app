@@ -93,31 +93,32 @@ function HomeChart() {
 const HomeWrapper = styled.section`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 `;
 const ChartSection = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  overflow-y: scroll;
+
   border-radius: 16px;
   gap: 20px;
   background-color: #f6f6f6;
-  height: 100vh;
+
   margin-top: 25px;
   margin-right: 20px;
+  padding: 16px;
+  height: 100%;
+  overflow-y: scroll;
 `;
 
 const ChartDisplay = styled.div`
   background-color: #ffffff;
-
-  height: fit-content;
-  width: 80%;
+  height: 100vh;
+  width: 100%;
 `;
 const FormDisplay = styled.div`
   background-color: #ffffff;
   width: 20%;
-
   overflow: hidden;
   display: flex;
   flex-direction: column;
