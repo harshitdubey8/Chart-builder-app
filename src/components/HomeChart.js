@@ -110,6 +110,13 @@ const ChartSection = styled.div`
   padding: 16px 16px 16px 16px;
   height: 100%;
   overflow-y: scroll;
+
+  @media (max-width: 786px) {
+    display: flex;
+    overflow-x: scroll;
+
+    margin-top: 10px;
+  }
 `;
 
 const ChartDisplay = styled.div`
@@ -118,7 +125,7 @@ const ChartDisplay = styled.div`
   width: 100%;
 
   @media (max-width: 768px) {
-    height: 50%;
+    height: 60%;
     width: 100%;
   }
 `;
