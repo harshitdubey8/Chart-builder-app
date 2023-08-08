@@ -55,7 +55,7 @@ function HomeChart() {
 
   return (
     <HomeWrapper>
-      <FormDisplay data-aos="fade-up-right">
+      <FormDisplay>
         <FormHeader>Chart Builder </FormHeader>
         <ChartForm chartDataHandler={chartDataHandler} />
       </FormDisplay>
@@ -95,18 +95,19 @@ const HomeWrapper = styled.section`
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 const ChartSection = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
   border-radius: 16px;
   gap: 20px;
   background-color: #f6f6f6;
-
   margin-top: 25px;
   margin-right: 20px;
-  padding: 16px;
+  padding: 16px 16px 16px 16px;
   height: 100%;
   overflow-y: scroll;
 `;
@@ -115,6 +116,11 @@ const ChartDisplay = styled.div`
   background-color: #ffffff;
   height: 100vh;
   width: 100%;
+
+  @media (max-width: 768px) {
+    height: 50%;
+    width: 100%;
+  }
 `;
 const FormDisplay = styled.div`
   background-color: #ffffff;
@@ -123,6 +129,11 @@ const FormDisplay = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 768px) {
+    background-color: royalblue;
+    height: fit-content;
+    width: 100%;
+  }
 `;
 
 const FormHeader = styled.h1`
